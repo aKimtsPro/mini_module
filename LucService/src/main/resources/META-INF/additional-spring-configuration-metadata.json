@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "rabbitmq.exchange-name",
+      "type": "java.lang.String",
+      "description": "Description for rabbitmq.exchange-name."
+    },
+    {
+      "name": "rabbitmq.listen-to",
+      "type": "java.lang.String",
+      "description": "Description for rabbitmq.listen-to."
+    },
+    {
+      "name": "rabbitmq.publish-to",
+      "type": "java.lang.String",
+      "description": "Description for rabbitmq.publish-to."
+    }
+  ] }

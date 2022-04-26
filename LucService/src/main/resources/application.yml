@@ -1,0 +1,4 @@
+rabbitmq:
+  publish-to: message_marie
+  listen-to: message_luc
+  exchange-name: prep.messages

@@ -1,0 +1,12 @@
+server:
+  port: 8082
+rabbitmq:
+  publish-to: message_luc
+  listen-to: message_marie
+  exchange-name: prep.messages
+spring:
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    username: guest
+    password: guest
