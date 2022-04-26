@@ -1,25 +1,13 @@
 version: "3.7"
-networks:
-  test-net:
-    driver: bridge
-
 services:
   rabbit:
     image: rabbitmq:3.8-management
-    container_name: rabbit
-    hostname: rabbit
     ports:
-      - 5672:5672
-      - 15672:15672
-    networks:
-      - test-net
+      - "5672:5672"
+      - "15672:15672"
   marie:
-    container_name: marie
-    hostname: marie
     build: ./MarieService
     ports:
       - "82:8082"
-    networks:
-      - test-net
     depends_on:
       - rabbit
