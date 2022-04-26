@@ -1,2 +1,4 @@
 FROM openjdk:17
-COPY target mon_dossier
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
