@@ -1,9 +1,6 @@
 package bstorm.akimts.marie.config;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,23 +12,23 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitConfig {
 
     @Bean("publish")
-    public Queue marieQueue(@Value("${rabbitmq.publish-to}") String queueName) {
+    public Queue lucQueue(@Value("${rabbitmq.publish-to}") String queueName) {
         return new Queue(queueName, true);
     }
 
     @Bean
-    public Queue lucQueue(@Value("${rabbitmq.listen-to}") String queueName) {
+    public Queue marieQueue(@Value("${rabbitmq.listen-to}") String queueName) {
         return new Queue(queueName, true);
     }
 
     @Bean
-    public TopicExchange MessageExchange(@Value("${rabbitmq.exchange-name}") String exchangeName) {
-        return new TopicExchange(exchangeName);
+    public DirectExchange MessageExchange(@Value("${rabbitmq.exchange-name}") String exchangeName) {
+        return new DirectExchange(exchangeName);
     }
 
     @Bean
-    public Binding binding(@Qualifier("publish") Queue q, TopicExchange e) {
-        return BindingBuilder.bind(q).to(e).with("marie");
+    public Binding binding(@Qualifier("publish") Queue q, DirectExchange e) {
+        return BindingBuilder.bind(q).to(e).with("luc");
     }
 
     @Bean

@@ -61,3 +61,6 @@ build/
 ### generate docs ###
 /docs/images
 /docs/pdf
+
+### config git ###
+/configs/*

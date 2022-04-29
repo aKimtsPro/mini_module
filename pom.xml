@@ -6,6 +6,7 @@
     <modules>
         <module>LucService</module>
 		<module>MarieService</module>
+		<module>ConfigServer</module>
 	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
@@ -30,7 +31,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -61,6 +61,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+
 
 	</dependencies>
 

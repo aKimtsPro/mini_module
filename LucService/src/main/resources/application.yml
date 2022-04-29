@@ -1,4 +1,10 @@
 rabbitmq:
   publish-to: message_marie
   listen-to: message_luc
-  exchange-name: prep.messages
+  exchange-name: direct.messages
+spring:
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    username: guest
+    password: guest

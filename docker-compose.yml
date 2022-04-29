@@ -6,8 +6,16 @@ services:
       - "5672:5672"
       - "15672:15672"
   marie:
+    restart: always
     build: ./MarieService
     ports:
       - "82:8082"
+    depends_on:
+      - rabbit
+  luc:
+    restart: always
+    build: ./LucService
+    ports:
+      - "81:8080"
     depends_on:
       - rabbit

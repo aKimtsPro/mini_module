@@ -3,7 +3,7 @@ server:
 rabbitmq:
   publish-to: message_luc
   listen-to: message_marie
-  exchange-name: prep.messages
+  exchange-name: direct.messages
 spring:
   rabbitmq:
     host: rabbit
